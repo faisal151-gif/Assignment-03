@@ -1,0 +1,291 @@
+/* =============================================================
+   style.css : one stylesheet shared by every page
+   CSE 391 / Assignment 3 / Car Workshop Appointment System
+   ============================================================= */
+
+/* ---------- 1. Colours used across the site ---------- */
+:root {
+  --bg: #f3f5f9;
+  --surface: #ffffff;
+  --text: #1d2433;
+  --muted: #5d6779;
+  --accent: #d9480f;        /* workshop orange */
+  --accent-dark: #b03a0c;
+  --border: #d9dee8;
+  --header-bg: #1d2433;
+  --green-bg: #e6f6ee;
+  --green: #17734a;
+  --red-bg: #fdecea;
+  --red: #b42318;
+  --shadow: 0 6px 20px rgba(29, 36, 51, 0.08);
+}
+
+/* ---------- 2. Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+/* body is a column: header, main, footer. main grows, so the
+   footer always stays at the bottom of the window. */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+main {
+  flex: 1;
+  padding-bottom: 40px;
+}
+
+a {
+  color: var(--accent);
+}
+
+h1 {
+  margin: 32px 0 4px;
+  font-size: 1.9rem;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.lead {
+  margin-top: 0;
+  color: var(--muted);
+}
+
+/* Centres the content and limits its width */
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- 3. Header and navigation ---------- */
+.site-header {
+  background: var(--header-bg);
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+nav a {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: #d5dae4;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ---------- 4. Cards (white boxes) ---------- */
+.card {
+  margin-bottom: 20px;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.details p {
+  margin: 4px 0;
+}
+
+/* ---------- 5. Form ---------- */
+/* Two columns on wide screens, one column on phones */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.field.full {
+  grid-column: 1 / -1;     /* address takes the whole row */
+}
+
+label {
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  font: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(217, 72, 15, 0.15);
+}
+
+/* Field that failed validation */
+.invalid {
+  border-color: var(--red);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.error {
+  color: var(--red);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ---------- 6. Buttons ---------- */
+.btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--accent-dark);
+}
+
+.btn-secondary {
+  background: #e4e7ee;
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  background: #d3d8e2;
+}
+
+.btn-small {
+  margin: 0;
+  padding: 4px 14px;
+  font-size: 0.9rem;
+}
+
+/* ---------- 7. Messages (green = success, red = error) ---------- */
+.alert {
+  margin-bottom: 20px;
+  padding: 14px 18px;
+  border-radius: 8px;
+  border-left: 5px solid;
+  font-weight: 600;
+}
+
+.alert-success {
+  background: var(--green-bg);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.alert-error {
+  background: var(--red-bg);
+  border-color: var(--red);
+  color: var(--red);
+}
+
+/* ---------- 8. Tables (admin list, help page) ---------- */
+.table-wrap {
+  overflow-x: auto;        /* table can scroll sideways on phones */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+th {
+  background: #f7f8fb;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+tbody tr:hover {
+  background: #fafbfd;
+}
+
+tr.highlight {
+  background: var(--green-bg);
+}
+
+/* ---------- 9. Footer ---------- */
+.site-footer {
+  padding: 16px 0;
+  background: var(--header-bg);
+  color: #aab2c2;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ---------- 10. Small screens ---------- */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav a {
+    margin-left: 0;
+  }
+}
