@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help | AutoCare Workshop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="logo" href="index.php">AutoCare <span>Workshop</span></a>
+        <nav>
+            <a href="index.php">Book Appointment</a>
+            <a href="admin.php">Admin Panel</a>
+            <a href="help.html" class="active">Help</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <h1>Help</h1>
+    <p class="lead">How to use the online appointment system.</p>
+
+    <section class="card">
+        <h2>For clients: how to book</h2>
+        <ol>
+            <li>Open the <a href="index.php">Book Appointment</a> page.</li>
+            <li>Type your <strong>full name</strong>, <strong>address</strong> and <strong>phone number</strong>.</li>
+            <li>Type your <strong>car license number</strong> (number plate) and <strong>car engine number</strong>.</li>
+            <li>Pick the <strong>appointment date</strong>. The mechanic list will update and show how many
+                places each mechanic still has on that date.</li>
+            <li>Choose the <strong>mechanic</strong> you want and press <em>Book Appointment</em>.</li>
+            <li>A green message means your appointment is confirmed. A red message tells you what to fix.</li>
+        </ol>
+    </section>
+
+    <section class="card">
+        <h2>Rules</h2>
+        <ul>
+            <li>Each mechanic can work on at most <strong>4 cars per day</strong>. A mechanic marked
+                <em>FULL</em> cannot be chosen for that date &ndash; pick another mechanic or another date.</li>
+            <li>A client can take only <strong>one appointment per day</strong> (we check your phone number
+                and car license number).</li>
+            <li>The date cannot be in the past.</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>What to type in each field</h2>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Rule</th><th>Example</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Full name</td><td>Letters and spaces only</td><td>Faisal Rahman</td></tr>
+                <tr><td>Address</td><td>Must not be empty</td><td>House 12, Road 5, Mohakhali, Dhaka</td></tr>
+                <tr><td>Phone</td><td>Exactly 11 digits, numbers only</td><td>01712345678</td></tr>
+                <tr><td>Car license number</td><td>Letters, numbers, spaces and -</td><td>DHAKA-METRO-GA-12-3456</td></tr>
+                <tr><td>Car engine number</td><td>Numbers only</td><td>4567891230</td></tr>
+                <tr><td>Appointment date</td><td>A real date, today or later</td><td>Use the calendar</td></tr>
+                <tr><td>Mechanic</td><td>Must choose one from the list</td><td>Rahim Uddin</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="card">
+        <h2>For the admin</h2>
+        <ul>
+            <li>Open the <a href="admin.php">Admin Panel</a> to see every appointment: client name, phone,
+                car registration number, date and mechanic.</li>
+            <li>Press <em>Edit</em> on a row to change the <strong>date</strong> and/or the
+                <strong>mechanic</strong>. Only mechanics with a free place on that date can be chosen.</li>
+        </ul>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">CSE 391 &middot; Assignment 3 &middot; Car Workshop Appointment System</div>
+</footer>
+</body>
+</html>
